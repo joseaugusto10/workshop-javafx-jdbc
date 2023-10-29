@@ -15,7 +15,8 @@ module com.example.workshopjavafxjdbc {
     exports control;
     opens model.entities to javafx.base;
     exports model.entities;
-
+    opens view.util to javafx.base;
+    exports view.util;
 
 
 }
