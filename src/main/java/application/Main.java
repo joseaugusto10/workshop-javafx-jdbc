@@ -11,31 +11,33 @@ import java.io.IOException;
 import java.net.URL;
 
 public class Main extends Application {
+    private static Scene mainScene;
+
     @Override
     public void start(Stage stage) {
         try {
             // Carregue o arquivo FXML em um AnchorPane
             URL fxmlURL = new File("src/Main/Java/view/MainView.fxml").toURI().toURL();
             FXMLLoader fxmlLoader = new FXMLLoader(fxmlURL);
-            AnchorPane anchorPane = fxmlLoader.load();
-
-            // Crie um ScrollPane e adicione o AnchorPane como conteúdo
-            ScrollPane scrollPane = new ScrollPane(anchorPane);
+            ScrollPane scrollPane = fxmlLoader.load();
 
             // Configurar o tamanho preferencial do ScrollPane
             scrollPane.setFitToHeight(true);
             scrollPane.setFitToWidth(true);
 
             // Crie uma cena com o ScrollPane
-            Scene scene = new Scene(scrollPane);
+            // Esse é meu palco
+            mainScene = new Scene(scrollPane);
             stage.setTitle("Hello!");
-            stage.setScene(scene);
+            stage.setScene(mainScene);
             stage.show();
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
-
+    public static Scene getMainScene(){
+        return mainScene;
+    }
     public static void main(String[] args) {
         launch();
     }
