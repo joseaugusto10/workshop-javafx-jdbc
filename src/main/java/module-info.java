@@ -13,6 +13,8 @@ module com.example.workshopjavafxjdbc {
     exports application;
     opens control to javafx.fxml;
     exports control;
+    opens model.entities to javafx.base;
+    exports model.entities;
 
 
 }
