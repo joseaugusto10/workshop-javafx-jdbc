@@ -5,14 +5,14 @@
 <?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="541.0" prefWidth="809.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="control.MainView">
+<AnchorPane prefHeight="541.0" prefWidth="809.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="control.MainViewController">
    <children>
       <MenuBar layoutY="1.0" prefHeight="26.0" prefWidth="809.0" AnchorPane.bottomAnchor="513.6" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.9999999999999787">
         <menus>
           <Menu mnemonicParsing="false" text="Registration">
             <items>
-              <MenuItem mnemonicParsing="false" text="Seller" />
-                  <MenuItem mnemonicParsing="false" text="Departament" />
+              <MenuItem fx:id="menuItemSeller" mnemonicParsing="false" onAction="#onMenuItemSellerAction" text="Seller" />
+                  <MenuItem fx:id="menuItemDepartment" mnemonicParsing="false" onAction="#onMenuItemDepartmentAction" text="Departament" />
             </items>
           </Menu>
           <Menu mnemonicParsing="false" text="Edit">
@@ -22,7 +22,7 @@
           </Menu>
           <Menu mnemonicParsing="false" text="Help">
             <items>
-              <MenuItem mnemonicParsing="false" text="About" />
+              <MenuItem fx:id="menuItemItemAbout" mnemonicParsing="false" onAction="#onMenuItemAboutAction" text="About" />
             </items>
           </Menu>
         </menus>
