@@ -41,7 +41,7 @@ public class MainViewController implements Initializable{
     }
 
     @Override
-    public void initialize(URL uri,ResourceBundle rb){
+    public void initialize(URL url,ResourceBundle rb){
     }
 
     //Método carregar outra tela em cima do palco principal
