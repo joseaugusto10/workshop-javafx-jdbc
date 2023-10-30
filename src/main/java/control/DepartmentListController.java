@@ -18,6 +18,7 @@ import javafx.stage.Modality;
 import javafx.stage.Stage;
 import model.entities.Department;
 import model.services.DepartmentService;
+import view.Listener.DataChangeListener;
 import view.util.Alerts;
 import view.util.Utils;
 
@@ -28,7 +29,7 @@ import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;
 
-public class DepartmentListController implements Initializable {
+public class DepartmentListController implements Initializable, DataChangeListener {
 
     private DepartmentService service;
 
@@ -86,6 +87,7 @@ public class DepartmentListController implements Initializable {
             DepartmentFormController controller = loader.getController();
             controller.setEntity(obj);
             controller.setService(new DepartmentService());
+            controller.subscribeDataChangeListener(this);
             controller.updateFormData();
 
             Stage dialogStage = new Stage();
@@ -101,4 +103,8 @@ public class DepartmentListController implements Initializable {
         }
     }
 
+    @Override
+    public void onDataChanged() {
+        updateTableView();
+    }
 }
